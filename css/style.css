@@ -41,14 +41,12 @@ li {
 .site-title img {
     width: 40px;
 }
-
 .wrapper {
     width: 100%;
     max-width: 1000px;
     margin: 0 auto;
     padding: 0 5%;
 }
-
 .section-title {
     margin-bottom: 50px;
 }
@@ -56,7 +54,6 @@ li {
     display: block;
     font-size: 3rem;
     color: #FF8C42;
-    margin-bottom: 2px;
     text-align: center;
 }
 .section-title .ja {
@@ -65,7 +62,6 @@ li {
     color: #A59F9F;
     text-align: center;
 }
-
 .content-title {
     margin: 10px 0;
 }
@@ -78,7 +74,6 @@ li {
     font-size: 0.875rem;
     color: #A59F9F;
 }
-
 /*-------------------------------------------
 header
 -------------------------------------------*/
@@ -86,6 +81,7 @@ header
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 20px auto;
     margin: 0 auto;
     background-color: #005f73;
     font-family: 'Kiwi Maru', sans-serif;
@@ -101,6 +97,7 @@ header
 }
 #header li {
     margin: 0 20px;
+    font-weight: bold;
 }
 #header li a {
     color: #fff;
@@ -153,6 +150,7 @@ info
     width: 300px;
     height: 300px;
     border-radius: 50%;
+    object-fit: cover;
 }
 
 /*-------------------------------------------
@@ -186,8 +184,8 @@ statue-honu
     top: -60%;
     left: -10%;
     transform: translateX(-50%);
-    width: 110px;
-    height: 110px;
+    width: 120px;
+    height: 120px;
     background-image: url(../img/kazari1.png);
     background-size: contain;
     background-repeat: no-repeat;
@@ -202,11 +200,11 @@ statue-honu
 #statue-honu .flex-item:nth-of-type(1) .item:nth-of-type(1)::before {
     content: "";
     position: absolute;
-    top: 330%;
-    right: 40%;
+    top: 1900px;
+    right: 38%;
     transform: translateX(-50%);
-    width: 110px;
-    height: 110px;
+    width: 120px;
+    height: 120px;
     background-image: url(../img/kazari2.png);
     background-size: contain;
     background-repeat: no-repeat;
@@ -238,22 +236,23 @@ News
     margin-bottom: 50px;
 }
 #news .section-title {
-    margin-top: 50px;
+    margin: 50px auto;
+    width: 180px;
 }
-
 /* Newsセクションの英語タイトルにヤシの木を配置 */
 #news .section-title .en {
+    display: inline-block;
+    padding: 0 50px;
     position: relative;
-    padding: 0 60px;
 }
 /* 左側のヤシの木 */
 #news .section-title .en::before {
     content: "";
     position: absolute;
-    left: 320px;
+    left: -40px;
     top: 50%;
     transform: translateY(-50%);
-    width: 10%;
+    width: 50px;
     height: 50px;
     background-image: url(../img/tree1.png);
     background-size: contain;
@@ -264,10 +263,10 @@ News
 #news .section-title .en::after {
     content: "";
     position: absolute;
-    right: 320px;
-    top: 50%;
+    right: -40px;
+    top: 30px;
     transform: translateY(-50%);
-    width: 10%;
+    width: 50px;
     height: 50px;
     background-image: url(../img/tree2.png);
     background-size: contain;
@@ -317,13 +316,15 @@ footer-contents
     border: solid 1px #FF8C42;
     display: inline-block;
     font-size: 0.875rem;
-    padding: 14px 150px;
+    padding: 14px 50px;
     width: 100%;
     margin-top: 30px;
     text-align: center;
 }
 #footer-contents .btn a {
     color: #fff;
+    display: block;
+    width: 100%;
 }
 
 /*-------------------------------------------
@@ -338,7 +339,7 @@ footer
 /*-------------------------------------------
 SP
 -------------------------------------------*/
-@media screen and (max-width:896px) {
+@media screen and (max-width:900px) {
     /*----------------------------------------
     header
     -----------------------------------------*/
@@ -362,7 +363,7 @@ SP
     mainvisual
     -----------------------------------------*/
     #mainvisual .small {
-    font-size: 1rem;
+    font-size: 1.25rem;
     }
     /*----------------------------------------
     info
@@ -370,10 +371,11 @@ SP
     #info ul {
         flex-direction: column;
         align-items: center;
-        margin-bottom: 20px;
+        margin-bottom: 50px;
     }
     #info li {
-        margin-bottom: 40px;
+        width:auto;
+        margin-bottom: 60px;
     }
     #info li img {
     width: 200px;
@@ -383,41 +385,54 @@ SP
     /*----------------------------------------
     #statue-honu
     -----------------------------------------*/
-    #statue-honu .flex-item {
+    #statue-honu .item {
+    width: auto;
+    text-align: center;
+    margin: 0 auto;
+    }
+    #statue-honu .flex-item:first-child {
         flex-direction: column;
         align-items: center;
-        margin-bottom: 40px;
+        padding-top: 80px;
     }
-    #statue-honu .item {
-        padding-bottom: 10px;
+    #statue-honu .flex-item:last-child {
+        flex-direction: column-reverse;
+        align-items: center;
+        padding-bottom: 80px;
+        margin-top: 140px;
     }
+    /* ハイビスカス画像1の画像 */
     #statue-honu .flex-item:nth-of-type(2) .item:nth-of-type(2)::before {
-    content: "";
-    position: absolute;
-    top: -360%;
-    left: 95%;
-    transform: translateX(-50%);
-    width: 100px;
-    height: 100px;
-    background-image: url(../img/kazari1.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    z-index: 1;
+        display: none;
     }
+    /* ハイビスカス画像2の画像 */
     #statue-honu .flex-item:nth-of-type(1) .item:nth-of-type(1)::before {
-    content: "";
-    position: absolute;
-    top: 370%;
-    right: 60%;
-    transform: translateX(-50%);
-    width: 100px;
-    height: 100px;
-    background-image: url(../img/kazari2.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    z-index: 1;
+        display: none;
+    }
+    #statue-honu .btn {
+    width: 100%;
+    }
+    /*----------------------------------------
+    News
+    -----------------------------------------*/
+    #news .section-title {
+    margin: 50px auto ;
+    width: 190px;
+    }
+    #news h3 .section-title {
+        display: inline-block;
+        padding: 0 50px;
+        position: relative;
+    }
+    #news .section-title .en::before {
+        left: 0;
+        width: 50px;
+        height: 50px;
+    }
+    #news .section-title .en::after {
+        right: 0;
+        width: 50px;
+        height: 50px;
     }
     /*----------------------------------------
     footer-contents
@@ -425,8 +440,7 @@ SP
     #footer-contents {
         flex-direction: column;
     }
-    .iframe-box {
+    #footer-contents .iframe-box iframe {
         width: 100%;
-        height: auto;
     }
 }
