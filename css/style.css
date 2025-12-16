@@ -1,0 +1,432 @@
+/*----------------
+CSS
+作成日：2025/12/06
+作成者：Miki
+サイト名：E como mai
+----------------*/
+@charset "UTF-8";
+
+html {
+    font-size: 100%;
+}
+body{
+    color: #000;
+    background-color: #E4EEF1;
+    font-size: 0.875rem;
+    font-family: 'Dancing Script','Kiwi Maru', sans-serif;
+}
+a {
+    text-decoration: none;
+    /*aタグの装飾を削除する*/
+}
+img {
+    max-width: 100%;
+    /*画像を親要素以上にしない*/
+    vertical-align: bottom;
+    /*要素の下端を、その行の最も低い要素の下端に揃える*/
+}
+li {
+    list-style: none;
+    /*liタグの装飾を削除する*/
+}
+
+.site-title {
+    line-height: 1px;
+    margin-left: 60px;
+    font-family: 'Dancing Script';
+}
+.site-title a {
+    display: block;
+}
+.site-title img {
+    width: 40px;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+.section-title {
+    margin-bottom: 50px;
+}
+.section-title .en {
+    display: block;
+    font-size: 3rem;
+    color: #FF8C42;
+    margin-bottom: 2px;
+    text-align: center;
+}
+.section-title .ja {
+    display: block;
+    font-size: 1rem;
+    color: #A59F9F;
+    text-align: center;
+}
+
+.content-title {
+    margin: 10px 0;
+}
+.content-title .en {
+    display: block;
+    font-size: 2rem;
+}
+.content-title .ja {
+    display: block;
+    font-size: 0.875rem;
+    color: #A59F9F;
+}
+
+/*-------------------------------------------
+header
+-------------------------------------------*/
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    background-color: #005f73;
+    font-family: 'Kiwi Maru', sans-serif;
+}
+#header p {
+    font-size: 2.25rem;
+    color: #fff;
+    margin-left: 30px;
+}
+#header ul {
+    display: flex;
+    padding: 10px 0;
+}
+#header li {
+    margin: 0 20px;
+}
+#header li a {
+    color: #fff;
+}
+
+/*-------------------------------------------
+mainvisual
+-------------------------------------------*/
+#mainvisual{
+    height: 100vh;
+    background-image: url(../img/mv.jpg);
+    background-size: cover;
+    background-position: center top;
+    position: relative;
+    text-align: center;
+    color: #fff;
+    padding-top: 80px;
+    margin-bottom: 16px;
+}
+#mainvisual h2 {
+    font-size: 2.5rem;
+    text-shadow: 3px 3px 0 #000;
+}
+#mainvisual .small {
+    font-size: 1.25rem;
+    text-shadow: 1px 1px 0 #000;
+    font-family: 'Kiwi Maru', sans-serif;
+}
+
+/*-------------------------------------------
+info
+-------------------------------------------*/
+#info {
+    background: url(../img/bg1.png) no-repeat center top / 100%;
+}
+#info .section-title {
+    text-align: center;
+}
+#info ul {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 80px;
+}
+#info li {
+    width: 32%;
+    text-align: center;
+    font-weight: bold;
+}
+#info li img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+}
+
+/*-------------------------------------------
+statue-honu
+-------------------------------------------*/
+#statue-honu {
+    background-color: #F4E9D8;
+}
+#statue-honu .section-title {
+    margin-bottom: 40px;
+}
+#statue-honu .flex-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#statue-honu .item {
+    width: 48%;
+    text-align: center;
+    margin: 50px auto;
+}
+
+/* ハイビスカス画像1を配置するための親要素（2つ目のflex-itemの2つ目のitem） */
+#statue-honu .flex-item:nth-of-type(2) .item:nth-of-type(2) {
+    position: relative;
+}
+/* ハイビスカス画像1の配置 */
+#statue-honu .flex-item:nth-of-type(2) .item:nth-of-type(2)::before {
+    content: "";
+    position: absolute;
+    top: -60%;
+    left: -10%;
+    transform: translateX(-50%);
+    width: 110px;
+    height: 110px;
+    background-image: url(../img/kazari1.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 1;
+}
+/* ハイビスカス画像2を配置するための親要素（1つ目のflex-itemの1つ目のitem） */
+#statue-honu .flex-item:nth-of-type(1) .item.flex-item:nth-of-type(1){
+    position: relative;
+}
+/* ハイビスカス画像2の配置 */
+#statue-honu .flex-item:nth-of-type(1) .item:nth-of-type(1)::before {
+    content: "";
+    position: absolute;
+    top: 330%;
+    right: 40%;
+    transform: translateX(-50%);
+    width: 110px;
+    height: 110px;
+    background-image: url(../img/kazari2.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 1;
+}
+
+#statue-honu .item img {
+    width: 100%;
+    border-radius: 16px;
+}
+#statue-honu .item p {
+    text-align: left;
+}
+#statue-honu .btn {
+    color: #fff;
+    background-color: #FF8C42;
+    border: solid 1px #FF8C42;
+    display: inline-block;
+    font-size: 0.875rem;
+    padding: 14px 80px;
+    margin-top: 30px;
+}
+
+/*-------------------------------------------
+News
+-------------------------------------------*/
+#news {
+    margin-bottom: 50px;
+}
+#news .section-title {
+    margin-top: 50px;
+}
+
+/* Newsセクションの英語タイトルにヤシの木を配置 */
+#news .section-title .en {
+    position: relative;
+    padding: 0 60px;
+}
+/* 左側のヤシの木 */
+#news .section-title .en::before {
+    content: "";
+    position: absolute;
+    left: 320px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10%;
+    height: 50px;
+    background-image: url(../img/tree1.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+/* 右側のヤシの木 */
+#news .section-title .en::after {
+    content: "";
+    position: absolute;
+    right: 320px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10%;
+    height: 50px;
+    background-image: url(../img/tree2.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#news dl {
+    display: flex;
+    flex-wrap: wrap;
+    font-family: 'Kiwi Maru', sans-serif;
+}
+#news dt {
+    color: #005F73;
+    border-bottom: solid 1px #005F73;
+    margin-bottom: 5px;
+}
+#news dd {
+    padding-bottom: 30px;
+}
+#news dd:last-child {
+    padding-bottom: none;
+}
+
+/*-------------------------------------------
+footer-contents
+-------------------------------------------*/
+#footer-contents {
+    background-color: #005F73;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Kiwi Maru', sans-serif;
+}
+#footer-contents h3 {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+#footer-contents .contents-left {
+    margin: 40px 0;
+}
+#footer-contents .contents-right {
+    margin: 40px 0;
+}
+#footer-contents .btn {
+    background-color: #FF8C42;
+    border: solid 1px #FF8C42;
+    display: inline-block;
+    font-size: 0.875rem;
+    padding: 14px 150px;
+    width: 100%;
+    margin-top: 30px;
+    text-align: center;
+}
+#footer-contents .btn a {
+    color: #fff;
+}
+
+/*-------------------------------------------
+footer
+-------------------------------------------*/
+#footer {
+    text-align: center;
+    padding: 10px 0;
+    font-family: 'Kiwi Maru', sans-serif;
+}
+
+/*-------------------------------------------
+SP
+-------------------------------------------*/
+@media screen and (max-width:896px) {
+    /*----------------------------------------
+    header
+    -----------------------------------------*/
+    #header {
+        max-width: 100%;
+        height: auto;
+        flex-direction: column;
+    }
+    #header li {
+        font-size: 0.8rem;
+        margin-left: 20px;
+    }
+    #header li:first-child {
+        margin-left: 0;
+    }
+    #header p {
+    font-size: 2rem;
+    color: #fff;
+    }
+    /*----------------------------------------
+    mainvisual
+    -----------------------------------------*/
+    #mainvisual .small {
+    font-size: 1rem;
+    }
+    /*----------------------------------------
+    info
+    -----------------------------------------*/
+    #info ul {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    #info li {
+        margin-bottom: 40px;
+    }
+    #info li img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    }
+    /*----------------------------------------
+    #statue-honu
+    -----------------------------------------*/
+    #statue-honu .flex-item {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 40px;
+    }
+    #statue-honu .item {
+        padding-bottom: 10px;
+    }
+    #statue-honu .flex-item:nth-of-type(2) .item:nth-of-type(2)::before {
+    content: "";
+    position: absolute;
+    top: -360%;
+    left: 95%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 100px;
+    background-image: url(../img/kazari1.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 1;
+    }
+    #statue-honu .flex-item:nth-of-type(1) .item:nth-of-type(1)::before {
+    content: "";
+    position: absolute;
+    top: 370%;
+    right: 60%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 100px;
+    background-image: url(../img/kazari2.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 1;
+    }
+    /*----------------------------------------
+    footer-contents
+    -----------------------------------------*/
+    #footer-contents {
+        flex-direction: column;
+    }
+    .iframe-box {
+        width: 100%;
+        height: auto;
+    }
+}
