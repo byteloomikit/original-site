@@ -234,6 +234,7 @@ News
 -------------------------------------------*/
 #news {
     margin-bottom: 50px;
+    background: url(../img/bg2.png) no-repeat center top/ 100%;
 }
 #news .section-title {
     margin: 50px auto;
@@ -344,9 +345,12 @@ SP
     header
     -----------------------------------------*/
     #header {
-        max-width: 100%;
+        width: 100%;
         height: auto;
         flex-direction: column;
+    }
+    nav  {
+        overflow-x: scroll;
     }
     #header li {
         font-size: 0.8rem;
