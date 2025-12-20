@@ -74,6 +74,53 @@ li {
     font-size: 0.875rem;
     color: #A59F9F;
 }
+
+/* PCでは普通のナビ */
+.g-nav {
+    position: static;
+    width: auto;
+    height: auto;
+    background: none;
+}
+#menu-btn {
+    display: none;
+}
+/* ハンバーガー */
+.hamburger {
+    display: none;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 30px;
+    height: 24px;
+    cursor: pointer;
+    z-index: 1001;
+}
+.hamburger span {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #FF8C42;
+    transition: 0.4s;
+}
+.hamburger span:nth-child(1) { top: 0; }
+.hamburger span:nth-child(2) { top: 10px; }
+.hamburger span:nth-child(3) { bottom: 0; }
+
+/* Xに変形 */
+#menu-btn:checked + .hamburger span:nth-child(1) {
+    transform: rotate(45deg);
+    top: 10px;
+}
+#menu-btn:checked + .hamburger span:nth-child(2) {
+    opacity: 0;
+}
+#menu-btn:checked + .hamburger span:nth-child(3) {
+    transform: rotate(-45deg);
+    bottom: 11px;
+}
+
 /*-------------------------------------------
 header
 -------------------------------------------*/
@@ -85,6 +132,11 @@ header
     margin: 0 auto;
     background-color: #005f73;
     font-family: 'Kiwi Maru', sans-serif;
+}
+#header {
+    background-color: rgba(0, 95, 115, 0.7);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
 }
 #header p {
     font-size: 2.25rem;
@@ -349,25 +401,59 @@ SP
         height: auto;
         flex-direction: column;
     }
-    nav  {
-        overflow-x: scroll;
-    }
-    #header li {
-        font-size: 0.8rem;
-        margin-left: 20px;
-    }
-    #header li:first-child {
-        margin-left: 0;
-    }
     #header p {
-    font-size: 2rem;
-    color: #fff;
+        font-size: 2.5rem;
+        color: #fff;
+    }
+
+    /* ハンバーガー表示 */
+    .hamburger {
+        display: block;
+    }
+        #header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1100;
+    }
+    .hamburger {
+        position: absolute;   /* header基準に配置 */
+        top: 20px;
+        right: 20px;
+    }
+    /* 左から出るメニュー*/
+    .g-nav {
+        position: fixed;
+        top: 0;
+        left: -260px;
+        width: 260px;
+        height: 100vh;
+        background: #005F73;
+        transition: 0.4s;
+        z-index: 1000;
+        padding-top: 80px;
+    }
+    /* メニューが開いた状態 */
+    #menu-btn:checked ~ .g-nav {
+        left: 0;
+    }
+    /* メニューの中身 */
+    .g-nav ul {
+        flex-direction: column;
+    }
+    .g-nav li {
+        margin: 20px;
+    }
+    .g-nav a {
+        color: #fff;
+        font-size: 1rem;
     }
     /*----------------------------------------
     mainvisual
     -----------------------------------------*/
     #mainvisual .small {
-    font-size: 1.25rem;
+        font-size: 1.25rem;
     }
     /*----------------------------------------
     info
@@ -382,17 +468,17 @@ SP
         margin-bottom: 60px;
     }
     #info li img {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
     }
     /*----------------------------------------
     #statue-honu
     -----------------------------------------*/
     #statue-honu .item {
-    width: auto;
-    text-align: center;
-    margin: 0 auto;
+        width: auto;
+        text-align: center;
+        margin: 0 auto;
     }
     #statue-honu .flex-item:first-child {
         flex-direction: column;
@@ -414,14 +500,14 @@ SP
         display: none;
     }
     #statue-honu .btn {
-    width: 100%;
+        width: 100%;
     }
     /*----------------------------------------
     News
     -----------------------------------------*/
     #news .section-title {
-    margin: 50px auto ;
-    width: 190px;
+        margin: 50px auto ;
+        width: 190px;
     }
     #news h3 .section-title {
         display: inline-block;
@@ -448,3 +534,4 @@ SP
         width: 100%;
     }
 }
+
