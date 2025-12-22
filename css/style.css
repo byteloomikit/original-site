@@ -429,7 +429,7 @@ SP
         left: -260px;
         width: 260px;
         height: 100vh;
-        background: #005F73;
+        background: #FF8C42;
         transition: 0.4s;
         z-index: 1000;
         padding-top: 80px;
@@ -534,5 +534,6 @@ SP
         width: 100%;
     }
 }
+
 
 
