@@ -9,7 +9,7 @@ CSS
 html {
     font-size: 100%;
 }
-body{
+body {
     color: #000;
     background-color: #E4EEF1;
     font-size: 0.875rem;
@@ -29,7 +29,16 @@ li {
     list-style: none;
     /*liタグの装飾を削除する*/
 }
+.wrapper {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
 
+/*-------------------------------------------
+site-title
+-------------------------------------------*/
 .site-title {
     line-height: 1px;
     margin-left: 60px;
@@ -41,12 +50,10 @@ li {
 .site-title img {
     width: 40px;
 }
-.wrapper {
-    width: 100%;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 5%;
-}
+
+/*-------------------------------------------
+section-title
+-------------------------------------------*/
 .section-title {
     margin-bottom: 50px;
 }
@@ -62,6 +69,10 @@ li {
     color: #A59F9F;
     text-align: center;
 }
+
+/*-------------------------------------------
+content-title
+-------------------------------------------*/
 .content-title {
     margin: 10px 0;
 }
@@ -75,17 +86,41 @@ li {
     color: #A59F9F;
 }
 
-/* PCでは普通のナビ */
-.g-nav {
-    position: static;
-    width: auto;
-    height: auto;
-    background: none;
+/*-------------------------------------------
+ヘッダー
+-------------------------------------------*/
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px auto;
+    margin: 0 auto;
+    background-color: #005f73;
+    font-family: 'Kiwi Maru', sans-serif;
+    background-color: rgba(0, 95, 115, 0.7);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
 }
-#menu-btn {
-    display: none;
+#header p {
+    font-size: 2.25rem;
+    color: #fff;
+    margin-left: 30px;
 }
-/* ハンバーガー */
+#header ul {
+    display: flex;
+    padding: 10px 0;
+}
+#header li {
+    margin: 0 20px;
+    font-weight: bold;
+}
+#header li a {
+    color: #fff;
+}
+
+/*-------------------------------------------
+ハンバーガーメニュー
+-------------------------------------------*/
 .hamburger {
     display: none;
     position: fixed;
@@ -108,7 +143,10 @@ li {
 .hamburger span:nth-child(2) { top: 10px; }
 .hamburger span:nth-child(3) { bottom: 0; }
 
-/* Xに変形 */
+#menu-btn {
+    display: none;
+}
+/* Xに変形する */
 #menu-btn:checked + .hamburger span:nth-child(1) {
     transform: rotate(45deg);
     top: 10px;
@@ -120,39 +158,11 @@ li {
     transform: rotate(-45deg);
     bottom: 11px;
 }
-
-/*-------------------------------------------
-header
--------------------------------------------*/
-#header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px auto;
-    margin: 0 auto;
-    background-color: #005f73;
-    font-family: 'Kiwi Maru', sans-serif;
-}
-#header {
-    background-color: rgba(0, 95, 115, 0.7);
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-}
-#header p {
-    font-size: 2.25rem;
-    color: #fff;
-    margin-left: 30px;
-}
-#header ul {
-    display: flex;
-    padding: 10px 0;
-}
-#header li {
-    margin: 0 20px;
-    font-weight: bold;
-}
-#header li a {
-    color: #fff;
+.g-nav {
+    position: static;
+    width: auto;
+    height: auto;
+    background: none;
 }
 
 /*-------------------------------------------
@@ -211,9 +221,6 @@ statue-honu
 #statue-honu {
     background-color: #F4E9D8;
 }
-#statue-honu .section-title {
-    margin-bottom: 40px;
-}
 #statue-honu .flex-item {
     display: flex;
     align-items: center;
@@ -224,7 +231,25 @@ statue-honu
     text-align: center;
     margin: 50px auto;
 }
-
+#statue-honu .item img {
+    width: 100%;
+    border-radius: 16px;
+}
+#statue-honu .item p {
+    text-align: left;
+}
+#statue-honu .section-title {
+    margin-bottom: 40px;
+}
+#statue-honu .btn {
+    color: #fff;
+    background-color: #FF8C42;
+    border: solid 1px #FF8C42;
+    display: inline-block;
+    font-size: 0.875rem;
+    padding: 14px 80px;
+    margin-top: 30px;
+}
 /* ハイビスカス画像1を配置するための親要素（2つ目のflex-itemの2つ目のitem） */
 #statue-honu .flex-item:nth-of-type(2) .item:nth-of-type(2) {
     position: relative;
@@ -264,25 +289,8 @@ statue-honu
     z-index: 1;
 }
 
-#statue-honu .item img {
-    width: 100%;
-    border-radius: 16px;
-}
-#statue-honu .item p {
-    text-align: left;
-}
-#statue-honu .btn {
-    color: #fff;
-    background-color: #FF8C42;
-    border: solid 1px #FF8C42;
-    display: inline-block;
-    font-size: 0.875rem;
-    padding: 14px 80px;
-    margin-top: 30px;
-}
-
 /*-------------------------------------------
-News
+news
 -------------------------------------------*/
 #news {
     margin-bottom: 50px;
@@ -326,7 +334,6 @@ News
     background-repeat: no-repeat;
     background-position: center;
 }
-
 #news dl {
     display: flex;
     flex-wrap: wrap;
@@ -394,31 +401,31 @@ SP
 -------------------------------------------*/
 @media screen and (max-width:900px) {
     /*----------------------------------------
-    header
+    ヘッダー
     -----------------------------------------*/
     #header {
         width: 100%;
         height: auto;
         flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1100;
     }
     #header p {
         font-size: 2.5rem;
         color: #fff;
     }
 
-    /* ハンバーガー表示 */
+    /*----------------------------------------
+    ハンバーガーメニュー
+    -----------------------------------------*/
+    /* ハンバーガーメニュー表示 */
     .hamburger {
         display: block;
     }
-        #header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 1100;
-    }
     .hamburger {
-        position: absolute;   /* header基準に配置 */
+        position: absolute;   
         top: 20px;
         right: 20px;
     }
@@ -448,13 +455,16 @@ SP
     .g-nav a {
         color: #fff;
         font-size: 1rem;
+        font-family: 'Kiwi Maru', sans-serif;
     }
+
     /*----------------------------------------
     mainvisual
     -----------------------------------------*/
     #mainvisual .small {
         font-size: 1.25rem;
     }
+
     /*----------------------------------------
     info
     -----------------------------------------*/
@@ -472,8 +482,9 @@ SP
         height: 200px;
         border-radius: 50%;
     }
+
     /*----------------------------------------
-    #statue-honu
+    statue-honu
     -----------------------------------------*/
     #statue-honu .item {
         width: auto;
@@ -502,8 +513,9 @@ SP
     #statue-honu .btn {
         width: 100%;
     }
+
     /*----------------------------------------
-    News
+    news
     -----------------------------------------*/
     #news .section-title {
         margin: 50px auto ;
@@ -524,6 +536,7 @@ SP
         width: 50px;
         height: 50px;
     }
+
     /*----------------------------------------
     footer-contents
     -----------------------------------------*/
@@ -534,6 +547,7 @@ SP
         width: 100%;
     }
 }
+
 
 
 
